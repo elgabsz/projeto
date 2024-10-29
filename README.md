@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+Esta calculadora em React permite realizar operações matemáticas básicas (soma, subtração, multiplicação e divisão) entre dois números inseridos pelo usuário. Ela exibe o resultado na tela e mantém um histórico das operações realizadas, que podem ser removidas individualmente. A calculadora possui um botão "Atualizar" que limpa todas as operações e resultados, reiniciando o cálculo. Em caso de divisão por zero, o resultado é exibido por um erro. O código é estruturado com tabelas para organizar números, operações, ações e histórico, proporcionando uma interface intuitiva e interativa.
+----------------------------------------------------------------------------------
+Introdução
+Este código cria uma calculadora em React que permite realizar operações matemáticas básicas entre dois números.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+As funcionalidades incluem soma (+), subtração (-), multiplicação (x), divisão (/) e um botão Atualizar que limpa todas as operações.
 
-## Available Scripts
+As operações e resultados aparecem em uma tabela de histórico, onde cada operação pode ser removida individualmente.
+----------------------------------------------------------------------------------
+Estrutura e Estados do Componente
+Os estados principais são:
+num1 e num2: armazenam os valores dos números inseridos.
 
-In the project directory, you can run:
+resultado: guarda o resultado da operação atual.
 
-### `npm start`
+mensagem: exibe uma mensagem de feedback para o usuário, como o envio de um resultado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+historico: armazena as operações realizadas em uma lista (array).
+----------------------------------------------------------------------------------
+Função de Cálculo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Ela recebe o tipo de operação (+, -, *, /) e executa a lógica correspondente.
 
-### `npm test`
+Em caso de divisão por zero, ela retorna um erro pois é indefinido.
+----------------------------------------------------------------------------------
+Gerenciamento de Resultados
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Enviar Resultado: O botão "Enviar" permite que o usuário confirme o resultado atual, exibindo uma mensagem de sucesso ou um aviso caso nenhuma operação tenha sido realizada.
 
-### `npm run build`
+Atualizar Histórico: O botão "Atualizar" limpa todas as operações e resultados da calculadora.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Remover Operação: Cada operação no histórico pode ser removida individualmente, permitindo uma gestão mais flexível das operações realizadas.
+----------------------------------------------------------------------------------
+Interface do Usuário
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Tabela de Números e Operações: onde o usuário insere os números e escolhe a operação desejada.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Tabela de Ações: que contém os botões para atualizar ou enviar resultados.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tabela de Histórico: exibe todos os resultados das operações realizadas, permitindo a remoção de operações específicas.
