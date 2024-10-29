@@ -6,6 +6,7 @@ const Calculadora = () => {
   const [num2, setNum2] = useState('');
   const [resultado, setResultado] = useState(null);
   const [mensagem, setMensagem] = useState('');
+  const [historico, setHistorico] = useState([]); // Armazena o histórico das operações
 
   const calcular = (operacao) => {
     const n1 = parseFloat(num1);
@@ -21,6 +22,9 @@ const Calculadora = () => {
 
     setResultado(res);
     setMensagem('');
+
+    // Adiciona o resultado atual ao histórico
+    setHistorico([...historico, { num1: n1, num2: n2, operacao, resultado: res }]);
   };
 
   const enviarResultado = () => {
@@ -33,12 +37,26 @@ const Calculadora = () => {
     setNum2('');
   };
 
+  const atualizarHistorico = () => {
+    setHistorico([]);
+    setResultado(null);
+    setMensagem('');
+  };
+
+  const removerOperacao = (index) => {
+    const novoHistorico = historico.filter((_, i) => i !== index);
+    setHistorico(novoHistorico);
+  };
+
   return (
     <div className="calculadora">
-      <h2>Calculadora / Operações</h2>
+      <h2>Calculadora</h2>
+      
+      {/* Tabela para números e operações */}
       <table className="operations-table">
         <tbody>
           <tr>
+            <td><label>Primeiro Número:</label></td>
             <td>
               <input
                 type="number"
@@ -47,6 +65,9 @@ const Calculadora = () => {
                 placeholder="Digite o primeiro número"
               />
             </td>
+          </tr>
+          <tr>
+            <td><label>Segundo Número:</label></td>
             <td>
               <input
                 type="number"
@@ -55,21 +76,24 @@ const Calculadora = () => {
                 placeholder="Digite o segundo número"
               />
             </td>
+          </tr>
+          <tr>
+            <td><label>Operações:</label></td>
             <td>
-              <button onClick={() => calcular('+')}>Somar</button>
-              <button onClick={() => calcular('-')}>Subtrair</button>
-              <button onClick={() => calcular('*')}>Multiplicar</button>
-              <button onClick={() => calcular('/')}>Dividir</button>
+              <button onClick={() => calcular('+')}>Adição</button> <button onClick={() => calcular('-')}>Subtração</button> <br></br>
+              <button onClick={() => calcular('*')}>Multiplicação</button>
+              <button onClick={() => calcular('/')}>Divisão</button>
             </td>
           </tr>
         </tbody>
       </table>
 
+      {/* Tabela para ações */}
       <table className="actions-table">
         <tbody>
           <tr>
             <td>
-              <button onClick={() => setResultado(null)}>Limpar</button>
+              <button onClick={atualizarHistorico}>Atualizar</button>
             </td>
             <td>
               <button onClick={enviarResultado} className="submit-btn">Enviar</button>
@@ -84,6 +108,33 @@ const Calculadora = () => {
           <h3>Resultado: {resultado}</h3>
         </div>
       )}
+
+      {/* Tabela de histórico dos resultados */}
+      <h3>Histórico de Operações</h3>
+      <table className="history-table">
+        <thead>
+          <tr>
+            <th>Número 1</th>
+            <th>Operação</th>
+            <th>Número 2</th>
+            <th>Resultado</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          {historico.map((item, index) => (
+            <tr key={index}>
+              <td>{item.num1}</td>
+              <td>{item.operacao}</td>
+              <td>{item.num2}</td>
+              <td>{item.resultado}</td>
+              <td>
+                <button onClick={() => removerOperacao(index)}>Remover</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

@@ -9,7 +9,7 @@
 }
 
 input {
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
 }
 
@@ -18,14 +18,20 @@ button {
   padding: 5px 10px;
 }
 
-.operations-table, .actions-table {
+.operations-table, .actions-table, .history-table {
   margin: 10px auto;
-  width: 100%;
   border-collapse: collapse;
+  width: 100%;
 }
 
-.operations-table td, .actions-table td {
+.operations-table td, .actions-table td, .history-table td, .history-table th {
   padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+label {
+  color: #61dafb;
 }
 
 .result {
@@ -34,4 +40,9 @@ button {
 
 .submitted-message {
   color: #20a6e4;
+}
+
+.history-table th {
+  background-color: #20a6e4;
+  color: black;
 }
