@@ -1,0 +1,40 @@
+/* Estilos gerais para a aplicação */
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+/* Cabeçalho */
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  border-bottom: 3px solid #61dafb;
+}
+
+.App-header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.credits {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #61dafb;
+}
+
+.credits p {
+  margin: 0;
+}
+
+.credits ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+}
+
+.credits li {
+  font-size: 0.9rem;
+}

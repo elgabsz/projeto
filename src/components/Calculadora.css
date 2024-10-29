@@ -1,0 +1,37 @@
+.calculadora {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #61dafb;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #282c34;
+  color: #61dafb;
+}
+
+input {
+  margin: 10px;
+  padding: 5px;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+}
+
+.operations-table, .actions-table {
+  margin: 10px auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.operations-table td, .actions-table td {
+  padding: 10px;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.submitted-message {
+  color: #20a6e4;
+}
