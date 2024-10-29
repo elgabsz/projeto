@@ -10,8 +10,9 @@ function App() {
         <div className="credits">
           <p>Desenvolvido por:</p>
           <ul>
-            <li> Gabriel Bellumat | 23214290087</li>
-            <li> Gustavo Lacerda | 23214290018</li>
+            <li> Gabriel Bellumat: 23214290087 | Gustavo Lacerda: 23214290018 | Gabriel Seixas: 23214290108</li>
+            <br></br>
+            <li> Erick Alves: 23214290109 | Matheus Mendes: 23214290116 | Vitor Mateus: 23214290111</li>
           </ul>
         </div>
       </header>
