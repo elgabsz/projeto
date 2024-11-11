@@ -6,7 +6,7 @@ const Calculadora = () => {
   const [num2, setNum2] = useState('');
   const [resultado, setResultado] = useState(null);
   const [mensagem, setMensagem] = useState('');
-  const [historico, setHistorico] = useState([]); // Armazena o histórico das operações
+  const [historico, setHistorico] = useState([]);
 
   const calcular = (operacao) => {
     const n1 = parseFloat(num1);
@@ -22,8 +22,6 @@ const Calculadora = () => {
 
     setResultado(res);
     setMensagem('');
-
-    // Adiciona o resultado atual ao histórico
     setHistorico([...historico, { num1: n1, num2: n2, operacao, resultado: res }]);
   };
 
@@ -50,9 +48,8 @@ const Calculadora = () => {
 
   return (
     <div className="calculadora">
-      <h2>Calculadora</h2>
+      <h2>Calculadora Padrão</h2>
       
-      {/* Tabela para números e operações */}
       <table className="operations-table">
         <tbody>
           <tr>
@@ -80,7 +77,9 @@ const Calculadora = () => {
           <tr>
             <td><label>Operações:</label></td>
             <td>
-              <button onClick={() => calcular('+')}>Adição</button> <button onClick={() => calcular('-')}>Subtração</button> <br></br>
+              <button onClick={() => calcular('+')}>Adição</button>
+              <button onClick={() => calcular('-')}>Subtração</button>
+              <br />
               <button onClick={() => calcular('*')}>Multiplicação</button>
               <button onClick={() => calcular('/')}>Divisão</button>
             </td>
@@ -88,7 +87,6 @@ const Calculadora = () => {
         </tbody>
       </table>
 
-      {/* Tabela para ações */}
       <table className="actions-table">
         <tbody>
           <tr>
@@ -109,7 +107,6 @@ const Calculadora = () => {
         </div>
       )}
 
-      {/* Tabela de histórico dos resultados */}
       <h3>Histórico de Operações</h3>
       <table className="history-table">
         <thead>
