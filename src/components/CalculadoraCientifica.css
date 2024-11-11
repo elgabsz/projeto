@@ -1,0 +1,67 @@
+.calculadora {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #282c34;
+    color: #e74c3c;
+  }
+  
+  input {
+    margin: 5px;
+    padding: 5px;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #c0392b;
+  }
+  
+  .operations-table, .actions-table, .history-table {
+    margin: 10px auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .operations-table td, .actions-table td, .history-table td, .history-table th {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  label {
+    color: #e74c3c;
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+  
+  .submitted-message {
+    color: #e74c3c;
+  }
+  
+  .history-table th {
+    background-color: #e74c3c;
+    color: black;
+  }
+  
+  .history-table td button {
+    background-color: #c0392b;
+    color: white;
+  }
+  
+  .history-table td button:hover {
+    background-color: #e74c3c;
+  }
+  
