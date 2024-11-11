@@ -1,11 +1,11 @@
 .calculadora {
   margin: 20px;
   padding: 20px;
-  border: 1px solid #61dafb;
+  border: 1px solid #61dafb; /* Azul */
   border-radius: 5px;
   text-align: center;
   background-color: #282c34;
-  color: #61dafb;
+  color: #61dafb; /* Azul */
 }
 
 input {
@@ -16,6 +16,15 @@ input {
 button {
   margin: 5px;
   padding: 5px 10px;
+  background-color: #61dafb; /* Azul */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3498db; /* Azul mais escuro */
 }
 
 .operations-table, .actions-table, .history-table {
@@ -31,7 +40,7 @@ button {
 }
 
 label {
-  color: #61dafb;
+  color: #61dafb; /* Azul */
 }
 
 .result {
@@ -39,10 +48,19 @@ label {
 }
 
 .submitted-message {
-  color: #20a6e4;
+  color: #61dafb; /* Azul */
 }
 
 .history-table th {
-  background-color: #20a6e4;
+  background-color: #61dafb; /* Azul */
   color: black;
+}
+
+.history-table td button {
+  background-color: #3498db; /* Azul mais escuro */
+  color: white;
+}
+
+.history-table td button:hover {
+  background-color: #61dafb; /* Azul */
 }
